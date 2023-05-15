@@ -1,5 +1,5 @@
-# ATTENZIONE
-Potete trovare una versione più aggiornata e ben suddivisa a questo indirizzo andando nella sezione "Repositories": https://github.com/UnivaqStudentHub
+# Link utili:
+M68k editor: https://asm-editor.specy.app/
 
 # Cosa posso trovare?
 Troverete tutte le esercitazioni fatte durante il laboratorio di informatica suddivise per giorno di esercitazione. Inoltre nella sezione Wiki sono presenti gli appunti per la materia LPS del secondo semestre primo anno
