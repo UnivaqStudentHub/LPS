@@ -205,6 +205,60 @@ mflo $s1
 mfhi $t1
     ;t1 = hi
 ```
+## rem – Calcolo del Resto
+
+Il comando `rem` calcola il resto della divisione tra due operandi.  
+Può essere utilizzato per ottenere direttamente il resto **senza** dover ricorrere ai registri speciali `hi` e `lo`, come nel caso di `div`.
+
+### Varianti del Comando `rem`
+
+#### 1. Resto tra due registri
+Calcola il resto della divisione tra il valore del secondo operando (dividendo) e il valore del terzo operando (divisore), salvando il risultato nel primo operando.
+
+```assembly
+rem <Reg>, <Reg>, <Reg>
+
+rem $t1, $t2, $t3
+    ;t1 = t2 % t3
+```
+
+#### 2. Resto con un numero immediato a 16 bit
+Calcola il resto della divisione tra il valore del secondo operando (dividendo) e un numero immediato a 16 bit , salvando il risultato nel primo operando.
+
+```assembly
+rem <Reg>, <Reg>, <Immediate16>
+
+rem $t1, $t2, -100
+    ;t1 = t2 % (-100)
+```
+#### 3. Resto con un numero immediato a 32 bit
+Calcola il resto tra il valore del secondo operando (dividendo) e un numero immediato a 32 bit, salvando il risultato nel primo operando.
+
+```assembly
+rem <Reg>, <Reg>, <Immediate32>
+
+rem $t1, $t2, 100000
+ ;t1 = t2 % 100000
+```
+## Note Importanti
+
+### 1. Tipi di Dati
+- Il comando `rem` funziona solo con numeri interi.
+- Non supporta numeri floating-point o altre rappresentazioni non intere.
+
+### 2. Comportamento con Divisione per Zero
+- Se il divisore è `0`, il comportamento è indefinito.
+- Questo potrebbe causare un'eccezione o un errore durante l'esecuzione.
+
+### 3. Differenze rispetto a `div`
+- A differenza di `div`, che calcola sia il quoziente che il resto:
+  - `rem` restituisce solo il resto della divisione.
+  - Non è necessario utilizzare i registri speciali `hi` e `lo` per ottenere il risultato.
+
+### 4. Uso Pratico
+- Il comando `rem` è utile quando è necessario calcolare solo il resto di una divisione.
+- Non è necessario preoccuparsi del quoziente nei calcoli.
+
 
 ## mul - mulu
 Effettua la moltiplicazione. Il risultato sarà salvato nel registro destinazione. 
